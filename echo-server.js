@@ -21,6 +21,8 @@ let server = net.createServer(function(connection) {
     // Use connection.write(...) to send data to the client
 
     // Remember, an echo server sends back exactly what was received.
+    console.log(clientData);
+    connection.write(clientData);
   });
 
   // Print a log message when a client disconnects
