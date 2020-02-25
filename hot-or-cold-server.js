@@ -25,17 +25,21 @@ let server = net.createServer(function(connection) {
 
       // Use connection.write(...) to print out a useful error message
       // and some instructions for the user.
+      connection.write("That doesn't look right, try an integer: ");
     } else if (userGuess < numberToGuess) {
       // The user's guess was too small.
       // Use connection.write(...) to tell them they're too cold.
+      connection.write('Cold! Too low! Guess again: ');
     } else if (userGuess > numberToGuess) {
       // The user's guess was too large.
       // Use connection.write(...) to tell them they're too hot.
+      connection.write('Hot! Too high! Guess again: ');
     } else if (userGuess === numberToGuess) {
       // The user guessed correctly!
 
       // Use connection.write(...) to tell them they guessed correctly
       // Use connection.end() to end the client connection
+      connection.write("That's the right number! Good job!");
     }
   });
 
